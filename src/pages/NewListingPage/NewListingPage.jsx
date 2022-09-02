@@ -1,8 +1,10 @@
-export default function NewOrderPage() {
+import { useState } from 'react';
 
+export default function NewListingPage() {
+  const [listings, setListings] = useState([]);
 
 
   return (
-    <h1>NewOrderPage</h1>
+    <h1>NewListingPage here</h1>
   );
 }
