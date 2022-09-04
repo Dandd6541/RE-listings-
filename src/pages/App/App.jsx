@@ -10,6 +10,10 @@ import './App.css';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
+  function addListing(listings) {
+    setlistings([...listings, listing]);
+  }
+
   return (
     <main className="App">
       { user ?
@@ -18,7 +22,12 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/listings/new' element={<NewListingPage />} />
+            <ListingHistoryPage listings={listings} />
+            <NewListingPage addListing={addListing} />
+            
+            
             <Route path='/listings' element={<ListingHistoryPage />} />
+            
           </Routes>
         </>
         :
