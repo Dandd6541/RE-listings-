@@ -35,7 +35,7 @@ export default function NewListingPage({ addListing }) {
        
 
       </select>
-
+      <NewListingPage addListing={addListing} />
       <button>Add Listing</button>
     </form>
   );

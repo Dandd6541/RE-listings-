@@ -1,10 +1,10 @@
 import ListingHistoryPage from "./ListingHistoryPage";
 
 
-export default function ListingPage({ listings }) {
+export default function ListingsPage({ listings }) {
   return (
     <ul>
-      {listings.map((s, idx) => (
+      {listings.map((l, idx) => (
         <ListingHistoryPage listings={l} key={idx} />
       ))}
     </ul>

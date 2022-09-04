@@ -1,10 +1,12 @@
 
-export default function ListingHistoryPage({ listing }) {
+export default function ListingHistoryPage({ listings }) {
   return (
     <ul>
       <li className="ListingHistoryPage">
-        {listing.name}
-        <span className="level">Level {listing.level}</span>
+        {listings.name}
+        <span className="level">Level {listings.level}</span>
+        <ListingHistoryPage listings={listings} />
+          
       </li>
     </ul>
   );
