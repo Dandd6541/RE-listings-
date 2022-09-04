@@ -4,14 +4,15 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
 import ListingHistoryPage from '../ListingHistoryPage/ListingHistoryPage';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBar'; 
 import './App.css';
-
+ 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [setListings, listings] = useState();
 
   function addListing(listings) {
-    setlistings([...listings, listing]);
+    setListings([...listings]);
   }
 
   return (
