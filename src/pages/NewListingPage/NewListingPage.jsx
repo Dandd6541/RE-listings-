@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function NewListingPage({ addListing }) {
 
@@ -29,7 +29,7 @@ export default function NewListingPage({ addListing }) {
         <label>Price:
           <input type="number" name="price" />
         </label>
-        <textarea></textarea>
+       
 
       </select>
 

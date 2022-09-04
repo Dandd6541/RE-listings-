@@ -1,11 +1,11 @@
 
-export default function ListingHistoryPage() {
-  
-  
-
+export default function ListingHistoryPage({ listing }) {
   return (
-  
-      <h1>ListingHistoryPage</h1>
-     
+    <ul>
+      <li className="ListingHistoryPage">
+        {listing.name}
+        <span className="level">Level {listing.level}</span>
+      </li>
+    </ul>
   );
 }
