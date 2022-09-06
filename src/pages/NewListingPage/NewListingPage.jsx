@@ -1,24 +1,29 @@
 import { useState } from "react";
 
 export default function NewListingPage({ addListing }) {
-  const [NewListing, setNewListing] = useState();
+  const [NewListing, setNewListing] = useState({ 
+    address:"",
+    price: "",
+    description: ""
+   });
 
   function handleListing(evt) {
     evt.preventDefault();
     addListing(NewListing);
-    setNewListing({
-      address: "",
-      price: "",
-      description: ""
-    });
+   
   }
 
+    
   function handleChange(evt) {
     const NewListingData = { ...NewListing, [evt.target.name]: evt.target.value };
     setNewListing(NewListingData);
   }
 
+ 
+
   return (
+    <>
+    <h1>hello</h1>
     <form onSubmit={handleListing} className="NewListingForm">
 
       <input value={NewListing.name} name="name" onChange={handleChange}></input>
@@ -35,9 +40,9 @@ export default function NewListingPage({ addListing }) {
        
 
       </select>
-      <NewListingPage addListing={addListing} />
       <button>Add Listing</button>
     </form>
+    </>
   );
 }
 

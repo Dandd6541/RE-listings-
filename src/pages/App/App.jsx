@@ -4,7 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
 import ListingHistoryPage from '../ListingHistoryPage/ListingHistoryPage';
-// import ListingsPage from '../ListingsPage/ListingsPage'; 
+//  import ListingsPage from '../ListingsPage/ListingsPage'; 
 import NavBar from '../../components/NavBar/NavBar';  
 import './App.css';
  
@@ -23,9 +23,8 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/listings/new' element={<NewListingPage user={user} setUser={setUser} />} />
+            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} />} />
             
-      
             <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser} />} />
             
           </Routes>
