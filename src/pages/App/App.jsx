@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
 import ListingHistoryPage from '../ListingHistoryPage/ListingHistoryPage';
+import * as listingsAPI from "../../utilities/listings-api";
 //  import ListingsPage from '../ListingsPage/ListingsPage'; 
 import NavBar from '../../components/NavBar/NavBar';  
 import './App.css';
@@ -12,8 +13,9 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [listings, setListings] = useState();
 
-  function addListing(listings) {
-    setListings([...listings]);
+  async function addListing(listingFormData) {
+    const listing = await listingsAPI.addOne(listingFormData);
+    setListings([...listings, listing]);
   }
 
   return (
@@ -23,9 +25,9 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings} addListing={addListing} setListings={setListings} />} />
+            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} addListing={addListing} listings={listings}  setListings={setListings} />} />
             
-            <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser} listings={listings} addListing={addListing} />} />
+            <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser}  listings={listings}  />} />
            
           </Routes>
         </>

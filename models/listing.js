@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const listingSchema = new Schema({
   address: { type: String, required: true },
   description: {type: Schema.Types.ObjectId, ref: 'Description'},
-  price: { type: Number, required: true, default: 0 },
+  price: { type: String, required: true, default: 0 },
 },{
 user: {type: Schema.Types.ObjectId, ref: 'User'},
 },

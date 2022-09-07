@@ -1,24 +1,23 @@
 import { useState, useEffect } from "react";
 import * as listingsAPI from '../../utilities/listings-api';
 
-export default function NewListingPage({ listings, setListings }) {
+export default function NewListingPage({ listings, setListings, addListing }) {
+
   const [newListing, setNewListing] = useState({ 
-    address:"",
+    address: "",
     price: "",
-    description: ""
-   });
+    description: "",
+   }); 
+  
+
    useEffect(function() {
     async function getListings() {
       const allListings = await listingsAPI.getAll();
       setListings(allListings);
     } 
     getListings();
-   },[]) 
+   },[]); 
 
-   async function addListing(listingFormData) {
-    const listing = await listingsAPI.addOne(listingFormData);
-    setListings([...listings, listing]);
-  }
 
   
 
@@ -26,9 +25,9 @@ export default function NewListingPage({ listings, setListings }) {
     evt.preventDefault();
     addListing(newListing);
     setNewListing({
-      address:"",
+    address:"",
     price: "",
-    description: ""
+    description: "",
 
     });
    
