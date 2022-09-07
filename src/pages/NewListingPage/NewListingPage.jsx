@@ -13,11 +13,11 @@ export default function NewListingPage({ listings, setListings }) {
       setListings(allListings);
     } 
     getListings();
-   },[] ) 
+   },[]) 
 
    async function addListing(listingFormData) {
     const listing = await listingsAPI.addOne(listingFormData);
-    setListings([...listing, listing]);
+    setListings([...listings, listing]);
   }
 
   
