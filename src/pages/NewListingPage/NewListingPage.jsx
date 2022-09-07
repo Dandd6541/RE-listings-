@@ -42,8 +42,8 @@ export default function NewListingPage({ addListing }) {
       <label>description:</label>
      
       
-
-      <button>Add Listing</button>
+      <button type="Submit" onClick={handleChange}>Add Listing</button>
+    
     </form>
     </>
   );

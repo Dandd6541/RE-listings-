@@ -1,13 +1,31 @@
-import ListingHistoryPage from "./ListingHistoryPage";
+import { useEffect, useState } from "react";
 
 
-export default function ListingsPage({ listings }) {
+export default function Listings({ user }) {
+  const [listings, setListings] = useState([]);
+  async function getListings() {
+    const listings = await getAll();
+    setListings(listings);
+  }
+  useEffect(() => {
+    getListings();
+  }, []);
+
   return (
-    <ul>
-      {listings.map((l, idx) => (
-        <ListingHistoryPage listings={l} key={idx} />
-      ))}
-    </ul>
+    <div>
+      {listings.map(function (Listing) {
+        return (
+          <ListingCard />
+        );
+      })}
+    </div>
   );
-  
+
+
+
+
+
+
+
+
 }

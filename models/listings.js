@@ -4,6 +4,6 @@ const mongoose = require('mongoose');
 // so that the Item's populate method will work
 require('./category');
 
-const listingSchema = require('./itemSchema');
+const listingSchema = require('./listingSchema');
 
-module.exports = mongoose.model('Item', itemSchema);
+module.exports = mongoose.model('Listing', listingSchema);
