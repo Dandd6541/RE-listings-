@@ -1,10 +1,15 @@
 
 
 
+
 export default function ListingHistoryPage({ listings }) {
   return (
-      <h1>helloworld</h1>
-      
-     
+    
+
+    <ul>
+      {listings.map((l, idx) => (
+        <ListingHistoryPage listing={l} key={idx} />
+      ))}
+    </ul>
   );
 }

@@ -23,10 +23,10 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} />} />
+            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings} addListing={addListing} />} />
             
-            <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser} />} />
-            
+            <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser} listings={listings} addListing={addListing} />} />
+           
           </Routes>
         </>
         :

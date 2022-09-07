@@ -10,6 +10,12 @@ export default function NewListingPage({ addListing }) {
   function handleListing(evt) {
     evt.preventDefault();
     addListing(NewListing);
+    setNewListing({
+      address:"",
+    price: "",
+    description: ""
+
+    });
    
   }
 
@@ -24,7 +30,7 @@ export default function NewListingPage({ addListing }) {
   return (
     <>
     <h1>hello</h1>
-    <form onSubmit={handleListing} className="NewListingForm">
+    <form onSubmit={handleListing} className="NewListingForm"> 
 
       <input value={NewListing.price} name="price" onChange={handleChange}></input>
       <label>price</label>
@@ -35,7 +41,7 @@ export default function NewListingPage({ addListing }) {
       <input name="description" onChange={handleChange} /> 
       <label>description:</label>
      
-       
+      
 
       <button>Add Listing</button>
     </form>
