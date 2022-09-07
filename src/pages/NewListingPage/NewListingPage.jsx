@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as listingsAPI from '../../utilities/listings-api';
 
-export default function NewListingPage({ addListing }) {
+export default function NewListingPage({ listings, setListings }) {
   const [NewListing, setNewListing] = useState({ 
     address:"",
     price: "",
     description: ""
    });
+   useEffect(function() {
+    async function getListings() {
+      const allListings = await listingsAPI.getAll();
+      setListings(allListings);
+    }
+   },[] ) 
+
+   async function addListing(listingFormData) {
+    const listing = await listingAPI.addOne(listingFormData);
+    setListings([...listing, listing]);
+  }
+
+  
 
   function handleListing(evt) {
     evt.preventDefault();
@@ -25,11 +39,9 @@ export default function NewListingPage({ addListing }) {
     setNewListing(NewListingData);
   }
 
- 
-
   return (
     <>
-    <h1>hello</h1>
+    <h1>hello P4</h1>
     <form onSubmit={handleListing} className="NewListingForm"> 
 
       <input value={NewListing.price} name="price" onChange={handleChange}></input>

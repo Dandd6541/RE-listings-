@@ -10,7 +10,7 @@ import './App.css';
  
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [setListings, listings] = useState();
+  const [listings, setListings] = useState();
 
   function addListing(listings) {
     setListings([...listings]);
@@ -23,7 +23,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings} addListing={addListing} />} />
+            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings} addListing={addListing} setListings={setListings} />} />
             
             <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser} listings={listings} addListing={addListing} />} />
            
