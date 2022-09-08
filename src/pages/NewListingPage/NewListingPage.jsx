@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as listingsAPI from '../../utilities/listings-api';
 
-export default function NewListingPage({ listings, setListings, addListing }) {
+export default function NewListingPage({ listings, setListings}) {
 
   const [newListing, setNewListing] = useState({ 
     address: "",
@@ -18,6 +18,10 @@ export default function NewListingPage({ listings, setListings, addListing }) {
     getListings();
    },[]); 
 
+   async function addListing(listingFormData) {
+    const listing = await listingsAPI.addOne(listingFormData);
+     setListings([...listings, listing]);
+   }
 
   
 
@@ -38,6 +42,29 @@ export default function NewListingPage({ listings, setListings, addListing }) {
     setNewListing({ ...newListing, [evt.target.name]: evt.target.value });
    
   }
+
+
+
+// export default function NewListingPage({ addListing }) {
+//   const [NewListing, setNewListing] = useState({
+//     address: "add address",
+//     price: 3,
+//     description: ''
+//   });
+
+//   function handleListing(evt) {
+//     evt.preventDefault();
+//     addListing(NewListing);
+//     setNewListing({
+//       name: "",
+//       level: 3
+//     });
+//   }
+
+//   function handleChange(evt) {
+//     const NewListingData = { ...NewListing, [evt.target.name]: evt.target.value };
+//     setNewListing(NewListingData);
+//   }
 
   return (
     <>

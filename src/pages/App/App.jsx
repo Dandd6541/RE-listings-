@@ -13,10 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [listings, setListings] = useState();
 
-  async function addListing(listingFormData) {
-    const listing = await listingsAPI.addOne(listingFormData);
-    setListings([...listings, listing]);
-  }
+  
 
   return (
     <main className="App">
@@ -25,7 +22,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} addListing={addListing} listings={listings}  setListings={setListings} />} />
+            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} />} />
             
             <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser}  listings={listings}  />} />
            
