@@ -1,4 +1,3 @@
-import NewListingPage from '../NewListingPage/NewListingPage';
 
 
 export default function ListingsPage({ listings, ListingsPage }) {
@@ -6,7 +5,6 @@ export default function ListingsPage({ listings, ListingsPage }) {
     <NewListingPage
       listing={i}
       isSelected={i === ListingsPage}
-      
       key={i._id}
     />
   );

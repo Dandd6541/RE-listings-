@@ -72,17 +72,17 @@ export default function NewListingPage({ listings, setListings}) {
     <form onSubmit={handleListing} className="NewListingForm"> 
       
       <input type='text' value={newListing.price} name="price" onChange={handleChange}></input>
-      <label>price</label>
+      <label>Price:</label>
       
       <input type='text' value={newListing.address} name="address" onChange={handleChange}></input>
-      <label>address</label>
+      <label>Address:</label>
      
       <input type="text" value={newListing.description} name="description" onChange={handleChange} /> 
-      <label>description:</label>
+      <label>Description:</label>
       
-      
+      <ul>
       <button type="submit" >Add Listing</button>
-    
+      </ul>
     </form>
     </>
   );
