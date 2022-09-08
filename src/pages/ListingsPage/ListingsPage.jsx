@@ -1,31 +1,18 @@
-import { useEffect, useState } from "react";
+import NewListingPage from '../NewListingPage/NewListingPage';
 
 
-export default function Listings({ user }) {
-  const [listings, setListings] = useState([]);
-  async function getListings() {
-    const listings = await getAll();
-    setListings(listings);
-  }
-  useEffect(() => {
-    getListings();
-  }, []);
-
-  return (
-    <div>
-      {listings.map(function (Listing) {
-        return (
-          <ListingCard />
-        );
-      })}
-    </div>
+export default function ListingsPage({ listings, ListingsPage }) {
+  const NewListingPage = listings.map(i =>
+    <NewListingPage
+      listing={i}
+      isSelected={i === ListingsPage}
+      
+      key={i._id}
+    />
   );
-
-
-
-
-
-
-
-
+  return (
+    <main className="ListingsPage">
+      {listings}
+    </main>
+  );
 }

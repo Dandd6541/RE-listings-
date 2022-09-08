@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import * as listingsAPI from '../../utilities/listings-api';
-
+import './NewListingPage.css';
 export default function NewListingPage({ listings, setListings}) {
 
   const [newListing, setNewListing] = useState({ 
@@ -32,16 +32,16 @@ export default function NewListingPage({ listings, setListings}) {
     address:"",
     price: "",
     description: "",
-
+      
     });
-   
   }
-
-    
+  
+  
   function handleChange(evt) {
     setNewListing({ ...newListing, [evt.target.name]: evt.target.value });
-   
+    
   }
+  console.log(setNewListing);
 
 
 
@@ -70,7 +70,7 @@ export default function NewListingPage({ listings, setListings}) {
     <>
     <h1>hello P4</h1>
     <form onSubmit={handleListing} className="NewListingForm"> 
-
+      
       <input type='text' value={newListing.price} name="price" onChange={handleChange}></input>
       <label>price</label>
       
@@ -79,7 +79,7 @@ export default function NewListingPage({ listings, setListings}) {
      
       <input type="text" value={newListing.description} name="description" onChange={handleChange} /> 
       <label>description:</label>
-     
+      
       
       <button type="submit" >Add Listing</button>
     

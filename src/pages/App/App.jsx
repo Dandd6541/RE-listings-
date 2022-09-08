@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
-import ListingHistoryPage from '../ListingHistoryPage/ListingHistoryPage';
+import ListingsPage from '../ListingsPage/ListingsPage';
 import * as listingsAPI from "../../utilities/listings-api";
 //  import ListingsPage from '../ListingsPage/ListingsPage'; 
 import NavBar from '../../components/NavBar/NavBar';  
@@ -24,7 +24,7 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} />} />
             
-            <Route path='/listings' element={<ListingHistoryPage user={user} setUser={setUser}  listings={listings}  />} />
+            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  />} />
            
           </Routes>
         </>
