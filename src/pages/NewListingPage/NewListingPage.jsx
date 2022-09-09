@@ -16,17 +16,17 @@ export default function NewListingPage({ listings, setListings}) {
     const listing = await listingsAPI.addOne(listingFormData);
      setListings([...listings, listing]);
    }
-   async function deleteListing(listingFormData) {
-    const listing = await listingsAPI.deleteOne(listingFormData);
-     setListings([...listings, listing]);
-   }
+  //  async function deleteListing(listingFormData) {
+  //   const listing = await listingsAPI.deleteOne(listingFormData);
+  //    setListings([...listings, listing]);
+  //  }
 
   
 
   function handleListing(evt) {
     evt.preventDefault();
     addListing(newListing);
-    deleteListing(newListing);
+    // deleteListing(newListing);
     setNewListing({
     address:"",
     price: "",
