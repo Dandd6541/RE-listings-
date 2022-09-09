@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
 import ListingsPage from '../ListingsPage/ListingsPage';
 import * as listingsAPI from "../../utilities/listings-api";
-//  import ListingsPage from '../ListingsPage/ListingsPage'; 
 import NavBar from '../../components/NavBar/NavBar';  
 import './App.css';
  
@@ -13,7 +12,13 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [listings, setListings] = useState();
 
-  
+  useEffect(function() {
+    async function getListings() {
+      const allListings = await listingsAPI.getAll();
+      setListings(allListings);
+    } 
+    getListings();
+   },[]); 
 
   return (
     <main className="App">

@@ -1,4 +1,4 @@
-import NewListingPage from "../NewListingPage/NewListingPage";
+import NewListingPage from "../../pages/NewListingPage/NewListingPage";
 
 
 

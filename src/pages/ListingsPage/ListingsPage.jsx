@@ -1,16 +1,19 @@
-
+import ListingCard from "../../components/ListingCard/ListingCard";
+import NewListingPage from "../NewListingPage/NewListingPage";
 
 export default function ListingsPage({ listings, ListingsPage }) {
-  const NewListingPage = listings.map(i =>
-    <NewListingPage
-      listing={i}
-      isSelected={i === ListingsPage}
-      key={i._id}
+  const newListings = listings.map(i =>
+    <ListingCard
+    listing={i}
+    key={i._id}
     />
-  );
-  return (
+    );
+    return (
+      <>
+    <h1>hello</h1> 
     <main className="ListingsPage">
-      {listings}
+      {newListings}
     </main>
+     </>
   );
 }

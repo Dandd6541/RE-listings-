@@ -9,3 +9,7 @@ export function getAll( )  {
 export function addOne(listingFormData) {
     return sendRequest(`${BASE_URL}`, 'POST', listingFormData);
 }
+
+export function deleteOne(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE', )
+}

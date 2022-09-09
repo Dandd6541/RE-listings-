@@ -10,13 +10,7 @@ export default function NewListingPage({ listings, setListings}) {
    }); 
   
 
-   useEffect(function() {
-    async function getListings() {
-      const allListings = await listingsAPI.getAll();
-      setListings(allListings);
-    } 
-    getListings();
-   },[]); 
+   
 
    async function addListing(listingFormData) {
     const listing = await listingsAPI.addOne(listingFormData);
