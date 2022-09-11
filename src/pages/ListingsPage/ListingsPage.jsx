@@ -1,10 +1,14 @@
 import ListingCard from "../../components/ListingCard/ListingCard";
-import { useState, useEffect } from 'react';
+import * as listingsAPI from '../../utilities/listings-api';
 import NewListingPage from "../NewListingPage/NewListingPage";
 
-export default function ListingsPage({ listings, ListingsPage }) {
+import { useState, useEffect } from 'react';
 
-   
+export default function ListingsPage({getUser}) {
+
+  const [user, setUser] = useState(getUser());
+  const [listings, setListings] = useState();
+     
   useEffect(function() {
     async function getListings() {
       const allListings = await listingsAPI.getAll();
@@ -14,12 +18,13 @@ export default function ListingsPage({ listings, ListingsPage }) {
    },[]); 
 
   
-  const newListings = listings.map(i =>
+   const newListings = listings.map(i =>
     <ListingCard
     listing={i}
     key={i._id}
     />
     );
+    console.log(listings);
     return (
       <>
     <h1>hello</h1> 

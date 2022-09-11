@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
+import LandingPage from '../LandingPage/LandingPage';
 import NewListingPage from '../NewListingPage/NewListingPage';
 import ListingsPage from '../ListingsPage/ListingsPage';
 import * as listingsAPI from "../../utilities/listings-api";
@@ -13,13 +14,13 @@ export default function App() {
   const [listings, setListings] = useState();
 
   
-  // useEffect(function() {
-  //   async function getListings() {
-  //     const allListings = await listingsAPI.getAll();
-  //     setListings(allListings);
-  //   } 
-  //   getListings();
-  //  },[]); 
+  useEffect(function() {
+    async function getListings() {
+      const allListings = await listingsAPI.getAll();
+      setListings(allListings);
+    } 
+    getListings();
+   },[]); 
 
   return (
     <main className="App">
@@ -29,6 +30,7 @@ export default function App() {
           <Routes>
             {/* Route components in here */}
             <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} />} />
+            <Route path="/" element={<LandingPage />} />
             
             <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  />} />
            

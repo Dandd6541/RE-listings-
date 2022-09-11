@@ -1,7 +1,7 @@
 import * as listingsAPI from '../../utilities/listings-api';
-import { useNavigate } from "react-router-dom";
+import NewListingPage from "../../pages/NewListingPage/NewListingPage";
 
-export default function ListingCard({listing, setListing}) { 
+export default function ListingCard({listing, setListing, navigate}) { 
 
     async function handleDelete(id) {
         await listingsAPI.deleteListing(id);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as listingsAPI from '../../utilities/listings-api';
 import './NewListingPage.css';
@@ -17,6 +17,7 @@ export default function NewListingPage({ listings, setListings}) {
     const listing = await listingsAPI.addOne(listingFormData);
    
      setListings([...listings, listing]);
+      
    }
   //  async function deleteListing(listingFormData) {
   //   const listing = await listingsAPI.deleteOne(listingFormData);
@@ -28,7 +29,7 @@ export default function NewListingPage({ listings, setListings}) {
   function handleListing(evt) {
     evt.preventDefault();
     addListing(newListing);
-    // deleteListing(newListing);
+     //deleteListing(newListing);
     setNewListing({
     address:"",
     price: "",
