@@ -1,10 +1,12 @@
+const { deleteModel } = require('mongoose');
 const Listing = require('../../models/listing');
 
 module.exports = {
   create,
   index,
-  show
-};
+  show,
+  deleteListing
+}; 
 
 async function create(req, res) {
   req.body.user = req.user._id;
@@ -13,8 +15,8 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-  const listings = await Listing.find({user: req.user._id})
-   res.json(listings);
+  const listing = await Listing.find({user: req.user._id})
+   res.json(listing);
 
 }
 
@@ -24,5 +26,9 @@ async function show(req, res) {
 
 }
 
+async function deleteListing(req, res) {
+  await Listing.findByIdAndDelete(req.params._id);
+  res.json(deleted);
+}
 
- 
+  

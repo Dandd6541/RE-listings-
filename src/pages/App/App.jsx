@@ -12,13 +12,14 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [listings, setListings] = useState();
 
-  useEffect(function() {
-    async function getListings() {
-      const allListings = await listingsAPI.getAll();
-      setListings(allListings);
-    } 
-    getListings();
-   },[]); 
+  
+  // useEffect(function() {
+  //   async function getListings() {
+  //     const allListings = await listingsAPI.getAll();
+  //     setListings(allListings);
+  //   } 
+  //   getListings();
+  //  },[]); 
 
   return (
     <main className="App">

@@ -8,5 +8,6 @@ router.get('/', listingsCtrl.index);
 router.post('/', listingsCtrl.create);
 // GET /api/listings/:id
 router.get('/:id', listingsCtrl.show);
+router.delete('/:id', listingsCtrl.deleteListing);
 
 module.exports = router;
