@@ -16,6 +16,7 @@ export default function App() {
   const routeChange = (path) => {
     navigate(path);
   };
+
   
   useEffect(function() {
     async function getListings() {
@@ -27,7 +28,11 @@ export default function App() {
     getListings();
   },[]); 
   
-
+  
+  async function editListing(id, listingFormData) {
+    const updateListing = await listingsAPI.updateListing(listingFormData, id);
+    setListings(updateListing);
+   }
   return (
     <main className="App">
       { user ?
@@ -35,10 +40,10 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/newlistings' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} />} />
+            <Route path='/listings/new' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} editListing={editListing} />} />
             <Route path="/" element={<LandingPage />} />
             
-            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  routeChange={routeChange} />} />
+            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  routeChange={routeChange} setListings={setListings} editListing={editListing} />} />
            
           </Routes>
         </>

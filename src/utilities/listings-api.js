@@ -7,7 +7,10 @@ export function getAll( )  {
 }
 
 export function addListing(listingFormData) {
-    return sendRequest(BASE_URL, 'POST', listingFormData);
+    return sendRequest(`${BASE_URL}/new`, 'POST', listingFormData);
+}
+export function updateListing(listingFormData, id) {
+    return sendRequest(`${BASE_URL}/update/${id}`, 'PUT', listingFormData);
 }
 
 export function deleteListing(id) {

@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to='/listings'>Listing History(mylisting)</Link>
       &nbsp; | &nbsp;
-      <Link to='/newlistings'>New Listing</Link>
+      <Link to='/listings/new'>New Listing</Link>
       &nbsp; | &nbsp;
       Welcome, {user.name}
       &nbsp; | &nbsp;

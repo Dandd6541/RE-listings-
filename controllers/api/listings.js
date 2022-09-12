@@ -1,11 +1,12 @@
-const { deleteModel } = require('mongoose');
+
 const Listing = require('../../models/listing');
 
 module.exports = {
   create,
   index,
-  show,
-  deleteListing
+  updateListing,
+  deleteListing,
+  show
 }; 
 
 async function create(req, res) {
@@ -18,7 +19,21 @@ async function create(req, res) {
 async function index(req, res) {
   const listing = await Listing.find({user: req.user._id})
    res.json(listing);
+}
 
+
+async function updateListing(req, res, next) {
+  try {
+    await Listing.findByIdAndUpdate(
+      {_id: req.params.id},
+      req.body,
+    )
+  const listing = await Listing.find({
+      user: req.user._id });
+      res.json(listing)
+} catch (err) {
+    return next(err); 
+  } 
 }
 
 async function show(req, res) {
@@ -30,6 +45,6 @@ async function show(req, res) {
 async function deleteListing(req, res) {
   await Listing.findByIdAndDelete(req.params.id);
   
-}
+} 
 
   
