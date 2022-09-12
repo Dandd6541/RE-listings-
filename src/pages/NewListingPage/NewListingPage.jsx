@@ -10,14 +10,17 @@ export default function NewListingPage({ listings, setListings}) {
     description: "",
    }); 
 
+   const navigate = useNavigate();
 
    
 
-   async function addListing(listingFormData) {
-    const listing = await listingsAPI.addOne(listingFormData);
+   async function addListing(evt) {
+    evt.preventDefault();
+    const listing = await listingsAPI.addListing(newListing);
    
-     setListings([...listings, listing]);
-      
+     setNewListing(listing);
+      setListings({...listings,listing})
+      navigate('/listings')
    }
   //  async function deleteListing(listingFormData) {
   //   const listing = await listingsAPI.deleteOne(listingFormData);
@@ -26,24 +29,14 @@ export default function NewListingPage({ listings, setListings}) {
 
   
 
-  function handleListing(evt) {
-    evt.preventDefault();
-    addListing(newListing);
-     //deleteListing(newListing);
-    setNewListing({
-    address:"",
-    price: "",
-    description: "",
-      
-    });
-  }
+  
   
   
   function handleChange(evt) {
     setNewListing({ ...newListing, [evt.target.name]: evt.target.value });
     
   }
-  console.log(setNewListing);
+ 
 
 
 
@@ -63,15 +56,15 @@ export default function NewListingPage({ listings, setListings}) {
 //     });
 //   }
 
-//   function handleChange(evt) {
-//     const NewListingData = { ...NewListing, [evt.target.name]: evt.target.value };
-//     setNewListing(NewListingData);
-//   }
+  function handleChange(evt) {
+    const NewListingData = { ...newListing, [evt.target.name]: evt.target.value };
+     setNewListing(NewListingData);
+  }
 
   return (
     <>
     <h1>hello P4</h1>
-    <form onSubmit={handleListing} className="NewListingForm"> 
+    <form onSubmit={addListing} className="NewListingForm"> 
       
       <input type='text' value={newListing.price} name="price" onChange={handleChange}></input>
       <label>Price:</label>

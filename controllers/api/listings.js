@@ -9,8 +9,9 @@ module.exports = {
 }; 
 
 async function create(req, res) {
-  req.body.user = req.user._id;
   const listing = await Listing.create(req.body);
+  listing.user = req.user._id;
+  listing.save();
   res.json(listing);
 }
 
