@@ -22,11 +22,7 @@ export default function NewListingPage({ listings, setListings}) {
       setListings({...listings,listing})
       navigate('/listings')
    }
-  //  async function deleteListing(listingFormData) {
-  //   const listing = await listingsAPI.deleteOne(listingFormData);
-  //    setListings([...listings, listing]);
-  //  }
-
+  
   
 
   

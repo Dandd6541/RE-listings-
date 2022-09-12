@@ -5,7 +5,7 @@ import { getUser } from '../../utilities/users-service';
 
 import { useState, useEffect } from 'react';
 
-export default function ListingsPage({listings}) {
+export default function ListingsPage({listings, routeChange}) {
 
   const [user, setUser] = useState(getUser());
   const [bestListings, setBestListings] = useState(listings);
@@ -16,16 +16,18 @@ export default function ListingsPage({listings}) {
       setBestListings(allListings);
     } 
     getListings();
-   },[]); 
+   },[listings]); 
    console.log(bestListings);
 
   
+   
    return (
      <>
     <h1>hello</h1> 
     <main className="ListingsPage">
      {bestListings.map(i =>
       <ListingCard
+      routeChange={routeChange}
       listing={i}
       key={i._id}
       />

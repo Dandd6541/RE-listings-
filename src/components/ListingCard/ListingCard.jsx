@@ -1,11 +1,11 @@
 import * as listingsAPI from '../../utilities/listings-api';
 import NewListingPage from "../../pages/NewListingPage/NewListingPage";
 
-export default function ListingCard({listing, setListing, navigate}) { 
+export default function ListingCard({listing, setListing, routeChange}) { 
 
     async function handleDelete(id) {
         await listingsAPI.deleteListing(id);
-        navigate('/listings');
+        routeChange("/listings");
       }
     return ( 
         <>

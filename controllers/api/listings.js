@@ -28,8 +28,8 @@ async function show(req, res) {
 }
 
 async function deleteListing(req, res) {
-  await Listing.findByIdAndDelete(req.params._id);
-  res.json(deleted);
+  await Listing.findByIdAndDelete(req.params.id);
+  
 }
 
   
