@@ -8,6 +8,7 @@ import ListingsPage from '../ListingsPage/ListingsPage';
 import * as listingsAPI from "../../utilities/listings-api";
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
+import EditListingPage from '../EditListingPage/EditListingPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -26,9 +27,10 @@ export default function App() {
   }, []);
 
 
-  async function editListing(listingFormData, id) {
+  async function handleUpdateListing(listingFormData, id) {
     const updatedListings = await listingsAPI.updateListings(id, listingFormData);
     setListings(updatedListings);
+    navigate('/listings');
   }
 
   async function handleDelete(id) {
@@ -54,8 +56,9 @@ export default function App() {
             {/* Route components in here */}
             <Route path='/listings/new' element={<NewListingPage handleAddListing={handleAddListing} />} /> 
             <Route path="/" element={<LandingPage />} />
+            <Route path='/listings/:id/edit' element={<EditListingPage handleUpdateListing={handleUpdateListing} listings={listings} />} /> 
 
-            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser} listings={listings} handleDelete={handleDelete} editListing={editListing} setListings={setListings} />} />
+            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser} listings={listings} handleDelete={handleDelete}  setListings={setListings} />} />
 
           </Routes>
         </>
