@@ -29,9 +29,9 @@ export default function App() {
   },[]); 
   
   
-  async function editListing(id, listingFormData) {
-    const updateListing = await listingsAPI.updateListing(listingFormData, id);
-    setListings(updateListing);
+  async function editListing(listingFormData, id) {
+    const updatedListing = await listingsAPI.updateListing(id, listingFormData);
+    setListings(updatedListing);
    }
   return (
     <main className="App">

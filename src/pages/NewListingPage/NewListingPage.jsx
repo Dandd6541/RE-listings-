@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as listingsAPI from '../../utilities/listings-api';
 import './NewListingPage.css';
 
-export default function NewListingPage({ listings, setListings, listingUpdated, setListingUpdated}) {
+export default function NewListingPage({ listing, listings, setListings, listingUpdated, setListingUpdated, editListing}) {
 
   const [newListing, setNewListing] = useState({ 
     address: "",
@@ -17,11 +17,18 @@ export default function NewListingPage({ listings, setListings, listingUpdated, 
 
    async function addListing(evt) {
     evt.preventDefault();
-    const listing = await listingsAPI.addListing(newListing);
-   
-     setNewListing(listing);
-      setListings({...listings,listing})
-      navigate('/listings')
+    if (listing) {
+      editListing(newListing, listing._id);
+      setListingUpdated(!listingUpdated);
+    
+    } else {
+      const listing = await listingsAPI.addListing(newListing);
+     
+       setNewListing(listing);
+        setListings({...listings,listing})
+        navigate('/listings')
+
+    }
    }
    
 
@@ -31,10 +38,10 @@ export default function NewListingPage({ listings, setListings, listingUpdated, 
      setNewListing(NewListingData);
   }
 
-
-
   return (
+
     <>
+    <h1>{ listing ? "editListing" : "newListing" }</h1>
     <h1>hello P4</h1>
     <form onSubmit={addListing} className="NewListingForm"> 
       
@@ -48,7 +55,7 @@ export default function NewListingPage({ listings, setListings, listingUpdated, 
       <label>Description:</label>
       
       <ul>
-      <button type="submit" >Add Listing</button>
+      <button type="submit" >{listing ? "editListing" : "newListing" }</button>
       </ul>
     </form>
     </>

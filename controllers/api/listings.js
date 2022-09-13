@@ -37,7 +37,7 @@ async function updateListing(req, res, next) {
 }
 
 async function show(req, res) {
-  const listing = await Listing.findOne({address: req.body.address});
+  const listing = await Listing.findOne({_id: req.body._id});
   res.json(listing);
 
 }
