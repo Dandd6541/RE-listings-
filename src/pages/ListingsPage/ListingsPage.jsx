@@ -3,7 +3,7 @@ import * as listingsAPI from '../../utilities/listings-api';
 import { useEffect } from 'react';
 import './ListingPage.css';
 
-export default function ListingsPage({listings, routeChange, setListings, editListing}) {
+export default function ListingsPage({listings, handleDelete, editListing, setListings}) {
 
   useEffect(function() {
     async function getListings() {
@@ -19,12 +19,12 @@ export default function ListingsPage({listings, routeChange, setListings, editLi
     
     <h1>hello</h1> 
     <main className="ListingsPage">
-     {listings.map(i =>
+     {listings.map(listing =>
       <ListingCard 
-      editListing={editListing}
-      routeChange={routeChange}
-      listing={i}
-      key={i._id}
+        editListing={editListing}
+        handleDelete={handleDelete}
+        listing={listing}
+        key={listing._id}
       />
       )};
     </main>

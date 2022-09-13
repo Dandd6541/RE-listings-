@@ -10,4 +10,6 @@
   -webkit-text-stroke: .04vmin rgb(25, 191, 209);
   background-image: url(https://i.imgur.com/8if1xcX.jpg);
   background-size: cover; 
+  background-repeat: no-repeat;
+  
 }

@@ -44,6 +44,7 @@ async function show(req, res) {
 
 async function deleteListing(req, res) {
   await Listing.findByIdAndDelete(req.params.id);
+  res.json('deleted');
   
 } 
 

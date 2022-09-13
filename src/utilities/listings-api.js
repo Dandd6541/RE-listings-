@@ -9,7 +9,7 @@ export function getAll( )  {
 export function addListing(listingFormData) {
     return sendRequest(`${BASE_URL}/new`, 'POST', listingFormData);
 }
-export function updateListing(id, listingFormData) {
+export function updateListings(id, listingFormData) {
     return sendRequest(`${BASE_URL}/update/${id}`, 'PUT', listingFormData);
 }
 

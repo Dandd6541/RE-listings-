@@ -12,7 +12,7 @@ import './App.css';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [listings, setListings] = useState([]);
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const routeChange = (path) => {
     navigate(path);
   };
@@ -30,9 +30,16 @@ export default function App() {
   
   
   async function editListing(listingFormData, id) {
-    const updatedListing = await listingsAPI.updateListing(id, listingFormData);
-    setListings(updatedListing);
+    const updatedListings = await listingsAPI.updateListings(id, listingFormData);
+    setListings(updatedListings);
    }
+
+   async function handleDelete(id) {
+    await listingsAPI.deleteListing(id);
+    const remainingLisitings =  listings.filter(listing => listing._id !== id);
+    setListings(remainingLisitings);
+}
+
   return (
     <main className="App">
       { user ?
@@ -43,7 +50,7 @@ export default function App() {
             <Route path='/listings/new' element={<NewListingPage user={user} setUser={setUser} listings={listings}  setListings={setListings} editListing={editListing} />} />
             <Route path="/" element={<LandingPage />} />
             
-            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  routeChange={routeChange} setListings={setListings} editListing={editListing} />} />
+            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser}  listings={listings}  handleDelete={handleDelete} editListing={editListing} setListings={setListings} />} />
            
           </Routes>
         </>
