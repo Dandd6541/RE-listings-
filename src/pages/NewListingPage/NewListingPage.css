@@ -16,7 +16,7 @@ ul {
 
 .listCard {
     color: rgba(125, 0, 251, 0.877);
-    -webkit-text-stroke: .05vmin rgb(8, 199, 233);
+    -webkit-text-stroke: .05vmin rgb(255, 255, 255);
     font-size: 20px;
     
 
