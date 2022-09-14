@@ -5,8 +5,11 @@ Lastly, it's purpose is also to help Realtors and potential home buyers keep tra
 
 ## :camera_flash: Screenshots
 
+<img src="https://i.imgur.com/93BR9fK.png"   width="600px" height="400px"/>
 <img src="https://i.imgur.com/feMu2dA.png"   width="600px" height="400px"/>
 <img src="https://i.imgur.com/NLSgNFG.png"   width="600px" height="400px"/>
+<img src="https://i.imgur.com/ddKrMD4.png"   width="600px" height="400px"/>
+
 
 
 
@@ -29,7 +32,7 @@ Lastly, it's purpose is also to help Realtors and potential home buyers keep tra
 To begin, Sign-up with us, Log-In to let your Listings. Once Logged in, click on the New-Listings link to create your first listing. 
 
 * Check RE-Listings!
-* https://safe-travels-p3.herokuapp.com/
+* https://realestatelistings12.herokuapp.com/
 
 * SafeTravels Trello Design Board
 * https://trello.com/b/LKxhzxN8/rei-project4
