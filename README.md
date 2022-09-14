@@ -1,7 +1,6 @@
 # RE-Listings
 
-RE-Lisitngs is an application built to help users List a new Real Estate Property. This app allows a user to add a Listing with a description on the Listing which was added. 
-Lastly, it's purpose is also to help Realtors and potential home buyers keep track of their listings.
+RE-Lisitngs is an application built to help users create a Real Estate Listing. Along with that it also functions to help users keep track of their previous inputed listings with all of the property information as well. Overall this is a multi-function app as anybody is Real Estate can use it. For example a Propery Manager, will use this app to keep track of their properties (location, description, contact, ect...) in a list which can be changed at the click of a button. A Broker can use this to post listings which in turn can yield a profit. If you are in Real Estate feel free to use it to your advantage and have fun!
 
 ## :camera_flash: Screenshots
 
