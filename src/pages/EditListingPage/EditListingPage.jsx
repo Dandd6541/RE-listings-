@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import './EditListingPage.css';
 
 export default function EditListingPage({ handleUpdateListing, listings }) {
   const {id} = useParams();
