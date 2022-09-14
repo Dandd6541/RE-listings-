@@ -7,7 +7,7 @@ RE-Lisitngs is an application built to help users create a Real Estate Listing. 
 <img src="https://i.imgur.com/93BR9fK.png"   width="600px" height="400px"/>
 <img src="https://i.imgur.com/feMu2dA.png"   width="600px" height="400px"/>
 <img src="https://i.imgur.com/NLSgNFG.png"   width="600px" height="400px"/>
-<img src="https://i.imgur.com/ddKrMD4.png"   width="600px" height="400px"/>
+<img src="https://i.imgur.com/4rEkCk8.png"   width="600px" height="400px"/>
 
 
 
