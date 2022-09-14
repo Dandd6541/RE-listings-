@@ -3,10 +3,10 @@ import { useState } from "react";
 import './EditListingPage.css';
 
 export default function EditListingPage({ handleUpdateListing, listings }) {
-  const {id} = useParams();
-  let editListing = listings.find(listing => listing._id === id );
+  const { id } = useParams();
+  let editListing = listings.find(listing => listing._id === id);
   const [newListing, setNewListing] = useState(editListing);
-  if(!editListing) return null;
+  if (!editListing) return null;
 
   function handleChange(evt) {
     const updatedListing = { ...newListing, [evt.target.name]: evt.target.value };
@@ -14,7 +14,7 @@ export default function EditListingPage({ handleUpdateListing, listings }) {
   }
   function handleSubmit(evt) {
     evt.preventDefault();
-    handleUpdateListing(newListing, id )
+    handleUpdateListing(newListing, id)
   }
 
   return (

@@ -7,7 +7,7 @@ module.exports = {
   updateListing,
   deleteListing,
   show
-}; 
+};
 
 async function create(req, res) {
   const listing = await Listing.create(req.body);
@@ -17,27 +17,28 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-  const listing = await Listing.find({user: req.user._id})
-   res.json(listing);
+  const listing = await Listing.find({ user: req.user._id })
+  res.json(listing);
 }
 
 
 async function updateListing(req, res, next) {
   try {
     await Listing.findByIdAndUpdate(
-      {_id: req.params.id},
+      { _id: req.params.id },
       req.body,
     )
-  const listing = await Listing.find({
-      user: req.user._id });
-      res.json(listing)
-} catch (err) {
-    return next(err); 
-  } 
+    const listing = await Listing.find({
+      user: req.user._id
+    });
+    res.json(listing)
+  } catch (err) {
+    return next(err);
+  }
 }
 
 async function show(req, res) {
-  const listing = await Listing.findOne({_id: req.body._id});
+  const listing = await Listing.findOne({ _id: req.body._id });
   res.json(listing);
 
 }
@@ -45,7 +46,7 @@ async function show(req, res) {
 async function deleteListing(req, res) {
   await Listing.findByIdAndDelete(req.params.id);
   res.json('deleted');
-  
-} 
 
-  
+}
+
+

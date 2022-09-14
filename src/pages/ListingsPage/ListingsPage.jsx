@@ -16,7 +16,7 @@ export default function ListingsPage({ listings, handleDelete, editListing, setL
   return (
 
     <>
-    <h1>Listings Page</h1>
+      <h1>Listings Page</h1>
       <main className="ListingsPage">
         {listings.map(listing =>
           <ListingCard
@@ -29,8 +29,8 @@ export default function ListingsPage({ listings, handleDelete, editListing, setL
 
         )}
       </main>
-   </>
-  
+    </>
+
 
 
   );

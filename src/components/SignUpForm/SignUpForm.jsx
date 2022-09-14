@@ -20,7 +20,7 @@ export default class SignUpForm extends Component {
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      const formData = {...this.state};
+      const formData = { ...this.state };
       delete formData.confirm;
       delete formData.error;
       const user = await signUp(formData);
@@ -31,7 +31,7 @@ export default class SignUpForm extends Component {
     }
   };
 
-  
+
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
@@ -53,5 +53,5 @@ export default class SignUpForm extends Component {
       </div>
     );
   }
-  
+
 }

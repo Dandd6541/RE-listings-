@@ -1,38 +1,36 @@
+nav>img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
 
-nav > img {
-    width: 34px;
-    object-fit: contain;
-    margin-right: auto;
-  }
-  
-  body > main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #E8ECEB;
-    padding: 20px;
-    overflow-y: scroll;
-  }
-  
-  body > main h1:first-child {
-    margin-bottom: 50px;
-  }
-  
-  nav > a {
-    margin: 20px;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  nav > a:hover:not(.active) {
-    color: rgb(221, 21, 10);
-    background-color: #fffefe;
-  }
-  
-  nav > a.active {
-    color: rgb(142, 20, 20);
-    cursor: default;
-  }
+body>main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
+}
 
+body>main h1:first-child {
+  margin-bottom: 50px;
+}
+
+nav>a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav>a:hover:not(.active) {
+  color: rgb(221, 21, 10);
+  background-color: #fffefe;
+}
+
+nav>a.active {
+  color: rgb(142, 20, 20);
+  cursor: default;
+}

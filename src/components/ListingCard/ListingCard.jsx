@@ -5,7 +5,7 @@ export default function ListingCard({ listing, handleDelete }) {
   const navigate = useNavigate();
 
   return (
-    
+
     <div className="contained">
       <div className="listCard">
         <h2>Listings</h2>
@@ -16,7 +16,7 @@ export default function ListingCard({ listing, handleDelete }) {
         <button onClick={() => handleDelete(listing._id)}>DELETE</button>
       </div>
     </div>
-    
+
   )
 }
 

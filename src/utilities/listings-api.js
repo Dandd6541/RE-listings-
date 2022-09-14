@@ -2,7 +2,7 @@ import sendRequest from "./send-request";
 
 const BASE_URL = "/api/listings";
 
-export function getAll( )  {
+export function getAll() {
     return sendRequest(`${BASE_URL}`);
 }
 
@@ -14,5 +14,5 @@ export function updateListings(id, listingFormData) {
 }
 
 export function deleteListing(id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'DELETE' );
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }

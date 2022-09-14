@@ -42,7 +42,7 @@ export default function App() {
   async function handleAddListing(evt, newListing) {
     evt.preventDefault();
     const listing = await listingsAPI.addListing(newListing);
-    setListings([ ...listings, listing ])
+    setListings([...listings, listing])
     navigate('/listings')
   }
 
@@ -54,11 +54,11 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path='/listings/new' element={<NewListingPage handleAddListing={handleAddListing} />} /> 
+            <Route path='/listings/new' element={<NewListingPage handleAddListing={handleAddListing} />} />
             <Route path="/" element={<LandingPage />} />
-            <Route path='/listings/:id/edit' element={<EditListingPage handleUpdateListing={handleUpdateListing} listings={listings} />} /> 
+            <Route path='/listings/:id/edit' element={<EditListingPage handleUpdateListing={handleUpdateListing} listings={listings} />} />
 
-            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser} listings={listings} handleDelete={handleDelete}  setListings={setListings} />} />
+            <Route path='/listings' element={<ListingsPage user={user} setUser={setUser} listings={listings} handleDelete={handleDelete} setListings={setListings} />} />
 
           </Routes>
         </>
