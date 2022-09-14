@@ -5,7 +5,7 @@ RE-Lisitngs is an application built to help users List a new Real Estate Propert
 
 ## :camera_flash: Screenshots
 
-<img src="https://imgur.com/feMu2dA"   width="600px" height="400px"/>
+<img src="https://i.imgur.com/NLSgNFG.png"   width="600px" height="400px"/>
 <img src="https://imgur.com/NLSgNFG"   width="600px" height="400px"/>
 
 
@@ -53,4 +53,4 @@ Thank you for the assistance and guidance <br>
 -Jim Clark <br>
 -Mario Recinos <br>
 -Joba <br>
-- SEI 6-21 Cohort <br>
+-SEI 6-21 Cohort <br>
