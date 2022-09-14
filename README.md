@@ -31,7 +31,7 @@ Lastly, it's purpose is also to help Realtors and potential home buyers keep tra
 
 To begin, Sign-up with us, Log-In to let your Listings. Once Logged in, click on the New-Listings link to create your first listing. 
 
-* Check RE-Listings!
+* Check out RE-Listings!
 * https://realestatelistings12.herokuapp.com/
 
 * SafeTravels Trello Design Board
@@ -46,13 +46,13 @@ To begin, Sign-up with us, Log-In to let your Listings. Once Logged in, click on
 
 
 
-Contact
+Contact:
 
 Daniel-Kay Mordehai:<br> 
 <a href="https://github.com/Dandd6541">DK's GitHub</a><br>
 <a href="https://www.linkedin.com/in/danielkaymordehai/">DK's LinkedIn</a><br>
 
-Acknowledgements <br>
+Acknowledgements: <br>
 Thank you for the assistance and guidance <br>
 -Jim Clark <br>
 -Mario Recinos <br>
