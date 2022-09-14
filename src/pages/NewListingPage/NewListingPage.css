@@ -13,4 +13,11 @@ ul {
     -webkit-text-stroke: .08vmin rgb(8, 199, 233);
   
 }
-  
+
+.listCard {
+    color: rgba(125, 0, 251, 0.877);
+    -webkit-text-stroke: .05vmin rgb(8, 199, 233);
+    font-size: 20px;
+    
+
+}
